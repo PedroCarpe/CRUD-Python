@@ -1,6 +1,6 @@
 #A ideia do algoritmo, é simular o cadastro de um cliente/usuario
 import mysql.connector
-from codigo_python import cadastrar,atualizar,cpf,email,telefone
+from codigo_python import cadastrar,atualizar
 
 
 #Conexao com o banco de dados
@@ -14,12 +14,12 @@ mycursor = mybd.cursor()
 
 print('___Cadastro__de__Cliente___')
 while True:
-    nome = cadastrar()
+    dados_usuario = cadastrar()
 
     sql = ('INSERT INTO pessoas (nome,cpf,email,telefone) VALUES(%s,%s,%s,%s)')
 
-    for usuario in range(len(nome)):
-        val = (nome[usuario],cpf[usuario],email[usuario],telefone[usuario])
+    for usuario in range(len(dados_usuario[0])):
+        val = (dados_usuario[0][usuario],dados_usuario[1][usuario],dados_usuario[2][usuario],dados_usuario[3][usuario])
         mycursor.execute(sql,val)
         mybd.commit()
 
