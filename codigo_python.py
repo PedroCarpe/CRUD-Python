@@ -1,5 +1,6 @@
 #A ideia do algoritmo, é simular o cadastro de um cliente/usuario
-#APF, validar entradas dos campos
+#APF, validar entradas dos campos, 
+#APF, eliminar as 'listas globais', por listas internas as funções
 
 nome = []
 cpf = []
@@ -21,14 +22,16 @@ def criar_nome():
             boleana = False
             break
 
-    #print(boleana)
+    print(boleana)
     if boleana == True:
         #print('\u2705')
         nome.append(copia_nome)
-        return nome
+        #return nome
     else:
         print('\u001b[31m'+'Nome incorreto, digite novamente!'+'\u001b[37m')
         criar_nome()      
+    
+    return nome
 
 def criar_cpf():
     global cpf
@@ -40,14 +43,15 @@ def criar_cpf():
     else:
         boleana = False
 
-    #print(boleana)
+    
     if boleana == True:
         cpf.append(cpf_)
-        return True
+        #return cpf
     else:
         print('\u001b[31m'+'CPF incorreto, digite novamente!'+'\u001b[37m')
         criar_cpf()      
 
+    return cpf
 
 def criar_email():
     global email
@@ -59,14 +63,15 @@ def criar_email():
     else:
         boleana = False
 
-    #print(boleana)
+    
     if boleana == True:
         email.append(email_)
-        return True
+        #return email
     else:
         print('\u001b[31m'+'Email incorreto, digite novamente!'+'\u001b[37m')
         criar_email()    
     
+    return email
 
 def criar_telefone():
     global telefone
@@ -78,22 +83,24 @@ def criar_telefone():
     else:
         boleana = False
 
-    #print(boleana)
+
     if boleana == True:
         telefone.append(telefone_)
-        return True
+        #return telefone
     else:
         print('\u001b[31m'+'Telefone incorreto, digite novamente!'+'\u001b[37m')
         criar_telefone()    
  
+    return telefone
 
+#será se os nomes dessas listas se confundem, com os nomes das listas 'globais'?
 def cadastrar():
-    nome1 = criar_nome()
-    criar_cpf()
-    criar_email()
-    criar_telefone()
+    nome = criar_nome()
+    cpf = criar_cpf()
+    email = criar_email()
+    telefone = criar_telefone()
 
-    return nome1                
+    return nome,cpf,email,telefone                
             
 
 def atualizar():
