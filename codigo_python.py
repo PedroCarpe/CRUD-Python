@@ -1,16 +1,18 @@
 #A ideia do algoritmo, é simular o cadastro de um cliente/usuario
 #APF, validar entradas dos campos, 
 #APF, eliminar as 'listas globais', por listas internas as funções
+#APF, verificar valores duplicados
 
-nome = []
-cpf = []
-email = []
-telefone = []
+#nome = []
+#cpf = []
+#email = []
+#telefone = []
 
     
 def criar_nome():
-    global nome
-    
+    #global nome
+    nome = []
+
     nome_ = input('Digite seu nome: ')
     copia_nome = nome_
     nome_ = nome_.split()
@@ -26,7 +28,7 @@ def criar_nome():
     if boleana == True:
         #print('\u2705')
         nome.append(copia_nome)
-        #return nome
+        
     else:
         print('\u001b[31m'+'Nome incorreto, digite novamente!'+'\u001b[37m')
         criar_nome()      
@@ -34,7 +36,8 @@ def criar_nome():
     return nome
 
 def criar_cpf():
-    global cpf
+    #global cpf
+    cpf = []
 
     cpf_ = input('Digite seu CPF(somente números/sem espaços): ')
 
@@ -46,7 +49,7 @@ def criar_cpf():
     
     if boleana == True:
         cpf.append(cpf_)
-        #return cpf
+        
     else:
         print('\u001b[31m'+'CPF incorreto, digite novamente!'+'\u001b[37m')
         criar_cpf()      
@@ -54,7 +57,8 @@ def criar_cpf():
     return cpf
 
 def criar_email():
-    global email
+    #global email
+    email = []
 
     email_ = input('Digite seu email: ')
 
@@ -66,7 +70,7 @@ def criar_email():
     
     if boleana == True:
         email.append(email_)
-        #return email
+        
     else:
         print('\u001b[31m'+'Email incorreto, digite novamente!'+'\u001b[37m')
         criar_email()    
@@ -74,7 +78,9 @@ def criar_email():
     return email
 
 def criar_telefone():
-    global telefone
+    #global telefone
+
+    telefone = []
 
     telefone_ = input('Digite seu Telefone(somente números/sem espaços): ')
 
@@ -86,7 +92,7 @@ def criar_telefone():
 
     if boleana == True:
         telefone.append(telefone_)
-        #return telefone
+
     else:
         print('\u001b[31m'+'Telefone incorreto, digite novamente!'+'\u001b[37m')
         criar_telefone()    
@@ -126,13 +132,13 @@ def atualizar():
 
     return dados_
 
-def deletar():
+'''def deletar():
     pos = nome.index(input('Digite o nome que deseja apagar: '))
     #id1.pop(pos)
     cpf.pop(pos)
     email.pop(pos)
     telefone.pop(pos)
-    nome.pop(pos)
+    nome.pop(pos)'''
 
 
 #vetor = [id1[0],nome[0],cpf[0],email[0],telefone[0]]
