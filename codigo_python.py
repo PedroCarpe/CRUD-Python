@@ -1,16 +1,10 @@
-#A ideia do algoritmo, é simular o cadastro de um cliente/usuario
-#APF, validar entradas dos campos, 
+#A ideia do algoritmo, é simular o cadastro de um cliente/usuario 
 #APF, eliminar as 'listas globais', por listas internas as funções
 #APF, verificar valores duplicados
-
-#nome = []
-#cpf = []
-#email = []
-#telefone = []
+#O codigo esta quebrado
 
     
 def criar_nome():
-    #global nome
     nome = []
 
     nome_ = input('Digite seu nome: ')
@@ -24,9 +18,7 @@ def criar_nome():
             boleana = False
             break
 
-    print(boleana)
     if boleana == True:
-        #print('\u2705')
         nome.append(copia_nome)
         
     else:
@@ -36,7 +28,6 @@ def criar_nome():
     return nome
 
 def criar_cpf():
-    #global cpf
     cpf = []
 
     cpf_ = input('Digite seu CPF(somente números/sem espaços): ')
@@ -48,8 +39,7 @@ def criar_cpf():
 
     
     if boleana == True:
-        cpf.append(cpf_)
-        
+        cpf.append(cpf_)   
     else:
         print('\u001b[31m'+'CPF incorreto, digite novamente!'+'\u001b[37m')
         criar_cpf()      
@@ -57,7 +47,6 @@ def criar_cpf():
     return cpf
 
 def criar_email():
-    #global email
     email = []
 
     email_ = input('Digite seu email: ')
@@ -70,7 +59,6 @@ def criar_email():
     
     if boleana == True:
         email.append(email_)
-        
     else:
         print('\u001b[31m'+'Email incorreto, digite novamente!'+'\u001b[37m')
         criar_email()    
@@ -78,8 +66,6 @@ def criar_email():
     return email
 
 def criar_telefone():
-    #global telefone
-
     telefone = []
 
     telefone_ = input('Digite seu Telefone(somente números/sem espaços): ')
@@ -92,14 +78,13 @@ def criar_telefone():
 
     if boleana == True:
         telefone.append(telefone_)
-
     else:
         print('\u001b[31m'+'Telefone incorreto, digite novamente!'+'\u001b[37m')
         criar_telefone()    
  
     return telefone
 
-#será se os nomes dessas listas se confundem, com os nomes das listas 'globais'?
+
 def cadastrar():
     nome = criar_nome()
     cpf = criar_cpf()
