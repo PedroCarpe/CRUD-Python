@@ -27,7 +27,7 @@ def criar_nome():
     
     return nome
 
-def criar_cpf():
+'''def criar_cpf():
     cpf = []
 
     cpf_ = input('Digite seu CPF(somente números/sem espaços): ')
@@ -43,6 +43,27 @@ def criar_cpf():
     else:
         print('\u001b[31m'+'CPF incorreto, digite novamente!'+'\u001b[37m')
         criar_cpf()      
+
+    return cpf'''
+
+def criar_cpf():
+    cpf = []
+
+    cpf_ = input('Digite seu CPF(somente números/sem espaços): ')
+
+    if cpf_.isnumeric() == True:
+        boleana = True
+    else:
+        boleana = False
+
+    
+    if boleana == True:
+        cpf.append(cpf_)   
+    else:
+        print('\u001b[31m'+'CPF incorreto, digite novamente!'+'\u001b[37m')
+        temp = criar_cpf()
+        temp = temp[0]
+        cpf.append(temp)      
 
     return cpf
 
