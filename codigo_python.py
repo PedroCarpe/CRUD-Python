@@ -61,12 +61,13 @@ def criar_email():
     else:
         boleana = False
 
-    
     if boleana == True:
         email.append(email_)
     else:
         print('\u001b[31m'+'Email incorreto, digite novamente!'+'\u001b[37m')
-        criar_email()    
+        temp = criar_email()
+        temp = temp[0]
+        email.append(temp)    
     
     return email
 
