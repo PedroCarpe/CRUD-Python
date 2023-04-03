@@ -81,12 +81,13 @@ def criar_telefone():
     else:
         boleana = False
 
-
     if boleana == True:
         telefone.append(telefone_)
     else:
         print('\u001b[31m'+'Telefone incorreto, digite novamente!'+'\u001b[37m')
-        criar_telefone()    
+        temp = criar_telefone()
+        temp = temp[0]
+        telefone.append(temp)
  
     return telefone
 
