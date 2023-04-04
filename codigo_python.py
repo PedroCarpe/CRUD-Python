@@ -124,13 +124,9 @@ def atualizar():
 
     return dados_
 
-'''def deletar():
-    pos = nome.index(input('Digite o nome que deseja apagar: '))
-    #id1.pop(pos)
-    cpf.pop(pos)
-    email.pop(pos)
-    telefone.pop(pos)
-    nome.pop(pos)'''
+def deletar():
+    cpf_usuario = input('Digite o CPF do usuário que deseja apagar: ')
+    return cpf_usuario
 
 
 #vetor = [id1[0],nome[0],cpf[0],email[0],telefone[0]]

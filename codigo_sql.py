@@ -1,6 +1,6 @@
 #A ideia do algoritmo, é simular o cadastro de um cliente/usuario
 import mysql.connector
-from codigo_python import cadastrar,atualizar
+from codigo_python import cadastrar,atualizar,deletar
 
 
 #Conexao com o banco de dados
@@ -12,7 +12,7 @@ database = 'usuarios'
 )
 mycursor = mybd.cursor()
 
-print('___Cadastro__de__Cliente___')
+'''print('___Cadastro__de__Cliente___')
 while True:
     dados_usuario = cadastrar()
 
@@ -25,9 +25,19 @@ while True:
 
     resposta = input('\nQuer cadastrar outro cliente (sim/nao)? ')
     if resposta == 'nao':
+        break'''
+
+print('___Apagar__registro__de__usuário___')
+while True:
+    cpf_usuario = deletar()
+    sql = f"DELETE FROM pessoas WHERE cpf = {cpf_usuario}"        
+    mycursor.execute(sql)
+    mybd.commit()
+    print(mycursor.rowcount," registro(s) afetado(s)!")
+    resposta = input('\nQuer apagar outro cliente (sim/nao)? ')
+
+    if resposta == 'nao':
         break
-
-
 
 '''resposta_atualizar = input('\nQuer atualizar seus dados (sim/nao)? ')
 if resposta_atualizar == 'sim':
