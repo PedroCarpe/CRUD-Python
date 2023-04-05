@@ -12,6 +12,9 @@ database = 'usuarios'
 )
 mycursor = mybd.cursor()
 
+print('4 - para deletar um registro')
+operacao = input('Digite a operação desejada: ')
+
 '''print('___Cadastro__de__Cliente___')
 while True:
     dados_usuario = cadastrar()
@@ -27,17 +30,18 @@ while True:
     if resposta == 'nao':
         break'''
 
-print('___Apagar__registro__de__usuário___')
-while True:
-    cpf_usuario = deletar()
-    sql = f"DELETE FROM pessoas WHERE cpf = {cpf_usuario}"        
-    mycursor.execute(sql)
-    mybd.commit()
-    print(mycursor.rowcount," registro(s) afetado(s)!")
-    resposta = input('\nQuer apagar outro cliente (sim/nao)? ')
+if operacao == '4':
+    print('\n___Apagar__registro__de__usuário___')
+    while True:
+        cpf_usuario = deletar()
+        sql = f"DELETE FROM pessoas WHERE cpf = {cpf_usuario}"        
+        mycursor.execute(sql)
+        mybd.commit()
+        print(mycursor.rowcount," registro(s) afetado(s)!")
+        resposta = input('\nQuer apagar outro cliente (sim/nao)? ')
 
-    if resposta == 'nao':
-        break
+        if resposta != 'sim':
+            break
 
 '''resposta_atualizar = input('\nQuer atualizar seus dados (sim/nao)? ')
 if resposta_atualizar == 'sim':
