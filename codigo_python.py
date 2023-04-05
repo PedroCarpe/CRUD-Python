@@ -1,9 +1,6 @@
 #A ideia do algoritmo, é simular o cadastro de um cliente/usuario 
-#APF, eliminar as 'listas globais', por listas internas as funções
 #APF, verificar valores duplicados quando for inserir
-#O codigo esta quebrado
 
-    
 def criar_nome():
     nome = []
 
@@ -20,7 +17,6 @@ def criar_nome():
 
     if boleana == True:
         nome.append(copia_nome)
-        
     else:
         print('\u001b[31m'+'Nome incorreto, digite novamente!'+'\u001b[37m')
         temp = criar_nome()
@@ -39,7 +35,6 @@ def criar_cpf():
         boleana = True
     else:
         boleana = False
-
     
     if boleana == True:
         cpf.append(cpf_)   
@@ -50,6 +45,7 @@ def criar_cpf():
         cpf.append(temp)      
 
     return cpf
+
 
 def criar_email():
     email = []
@@ -70,6 +66,7 @@ def criar_email():
         email.append(temp)    
     
     return email
+
 
 def criar_telefone():
     telefone = []
@@ -123,6 +120,7 @@ def atualizar():
         dados_ = novo_tel,antigo_tel,'telefone'
 
     return dados_
+
 
 def deletar():
     cpf_usuario = input('Digite o CPF do usuário que deseja apagar: ')
