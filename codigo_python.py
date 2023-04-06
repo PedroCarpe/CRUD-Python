@@ -126,17 +126,4 @@ def deletar():
     cpf_usuario = input('Digite o CPF do usuário que deseja apagar: ')
     return cpf_usuario
 
-
-#vetor = [id1[0],nome[0],cpf[0],email[0],telefone[0]]
-
-'''resposta=input('\nDeseja apagar um cadastro (sim/nao)? ')
-if resposta=='sim':
-    try:
-        print('___Apagar__Cadastro___')
-        Deletar()
-    except:
-        print('Cliente não encontrado!')'''
-    
-#for t in range(len(id1)):
-#    print('\n___Dados__Cadastrados___\n'+'Nome: '+nome[t]+'\n'+'CPF: '+cpf[t][0:3]+'.'+cpf[t][3:6]+'.'+cpf[t][6:9]+'-'+cpf[t][9:]+'\n'+'Email: '+email[t]+'\n'+'Telefone: ('+telefone[t][0:2]+') '+telefone[t][2:])    
   
