@@ -12,25 +12,29 @@ database = 'usuarios'
 )
 mycursor = mybd.cursor()
 
-print('4 - para deletar um registro')
+
+print('\n1 - para cadastrar um usuário\n4 - para deletar um registro')
 operacao = input('Digite a operação desejada: ')
 
-'''print('___Cadastro__de__Cliente___')
-while True:
-    dados_usuario = cadastrar()
+if operacao == '1':
+    print('\n___Cadastro__de__Cliente___')
+    while True:
+        dados_usuario = cadastrar()
 
-    sql = ('INSERT INTO pessoas (nome,cpf,email,telefone) VALUES(%s,%s,%s,%s)')
+        sql = ('INSERT INTO pessoas (nome,cpf,email,telefone) VALUES(%s,%s,%s,%s)')
 
-    for usuario in range(len(dados_usuario[0])):
-        val = (dados_usuario[0][usuario],dados_usuario[1][usuario],dados_usuario[2][usuario],dados_usuario[3][usuario])
-        mycursor.execute(sql,val)
-        mybd.commit()
+        for usuario in range(len(dados_usuario[0])):
+            val = (dados_usuario[0][usuario],dados_usuario[1][usuario],dados_usuario[2][usuario],dados_usuario[3][usuario])
+            mycursor.execute(sql,val)
+            mybd.commit()
 
-    resposta = input('\nQuer cadastrar outro cliente (sim/nao)? ')
-    if resposta == 'nao':
-        break'''
+        resposta = input('\nQuer cadastrar outro cliente (sim/nao)? ')
+        while resposta != 'sim' and resposta != 'nao':
+            resposta = input('\nQuer cadastrar outro cliente (sim/nao)? ')
+        if resposta == 'nao':
+            break
 
-if operacao == '4':
+elif operacao == '4':
     print('\n___Apagar__registro__de__usuário___')
     while True:
         cpf_usuario = deletar()
@@ -38,9 +42,11 @@ if operacao == '4':
         mycursor.execute(sql)
         mybd.commit()
         print(mycursor.rowcount," registro(s) afetado(s)!")
+        
         resposta = input('\nQuer apagar outro cliente (sim/nao)? ')
-
-        if resposta != 'sim':
+        while resposta != 'sim' and resposta != 'nao':
+            resposta = input('\nQuer cadastrar outro cliente (sim/nao)? ')
+        if resposta == 'nao':
             break
 
 '''resposta_atualizar = input('\nQuer atualizar seus dados (sim/nao)? ')
