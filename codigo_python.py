@@ -1,5 +1,5 @@
 #A ideia do algoritmo, é simular o cadastro de um cliente/usuario 
-#APF, verificar valores duplicados quando for inserir
+#APF, verificar valores duplicados quando for inserir, tratamento de erro
 
 def criar_nome():
     nome = []
@@ -90,6 +90,7 @@ def criar_telefone():
 
 
 def cadastrar():
+    print('\n___Cadastro__de__Cliente___')
     nome = criar_nome()
     cpf = criar_cpf()
     email = criar_email()
@@ -99,6 +100,7 @@ def cadastrar():
             
 
 def atualizar():
+    print('\n___Atualização__de__Cadastro___')
     print('Opções de atualização:\n1 - Nome;\n2 - CPF;\n3 - Email;\n4 - Telefone;\n')
     opcao = input('Digite a opção desejada: ')
     
@@ -123,6 +125,7 @@ def atualizar():
 
 
 def deletar():
+    print('\n___Apagar__registro__de__usuário___')
     cpf_usuario = input('Digite o CPF do usuário que deseja apagar: ')
     return cpf_usuario
 
