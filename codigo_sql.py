@@ -1,16 +1,13 @@
 #A ideia do algoritmo, é simular o cadastro de um cliente/usuario
 import mysql.connector
+from acesso_banco import conecta_ao_banco
 from codigo_python import cadastrar,atualizar,deletar
 
 
 #Conexao com o banco de dados
-mybd = mysql.connector.connect(
-host = 'localhost',
-user = 'root',
-password = 'senha',
-database = 'usuarios'
-)
-mycursor = mybd.cursor()
+acesso_ao_banco = conecta_ao_banco()
+mycursor = acesso_ao_banco[0]
+mybd = acesso_ao_banco[1]
 
 
 print('\n1 - para cadastrar um usuário\n2 - para atualizar um cadastro\n3 - para deletar um cadastro')
