@@ -16,4 +16,4 @@ def conecta_ao_banco():
         conexao = mybd.cursor()
         return conexao,mybd
     except:
-        print('Erro ao conectar ao Banco de Dados!')
+        print('Erro ao conectar ao Banco de Dados!!')
